@@ -8,7 +8,7 @@ namespace csharp_oop_shop
 {
     internal class Prodotto
     {
-        public int Codice { get; set; }
+        public int Codice { get; }
         public string Nome { get; set; }
         public string Descrizione { get; set; }
         public double prezzo;
@@ -22,8 +22,6 @@ namespace csharp_oop_shop
             this.prezzo = prezzo ;
         }
 
-
-
         public double GetIvaPrice()
         {
 
@@ -36,9 +34,6 @@ namespace csharp_oop_shop
         // codice
         public int GetCodice()
         {
-            Random rnd = new Random();
-            int num = rnd.Next();
-            this.Codice = num;
             return this.Codice;
         }
 
