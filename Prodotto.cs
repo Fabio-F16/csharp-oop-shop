@@ -12,7 +12,7 @@ namespace csharp_oop_shop
         public string Nome { get; set; }
         public string Descrizione { get; set; }
         public double prezzo;
-        public double iva;
+        private double iva;
 
         public Prodotto(string nome, string descrizione, double prezzo)
         {
@@ -24,13 +24,16 @@ namespace csharp_oop_shop
 
 
 
-        public double Iva
+        public double GetIvaPrice()
         {
-            get { return iva = 0.21; }
+
+            this.iva = 0.21;
+            double fullPrice = this.prezzo + this.iva;
+            return fullPrice;
         }
 
 
-
+        // codice
         public int GetCodice()
         {
             Random rnd = new Random();
@@ -39,22 +42,24 @@ namespace csharp_oop_shop
             return this.Codice;
         }
 
+
+        // nome + codice
         public string GetNome()
         {
             return $"{Codice} - {Nome}";
         }
 
 
+        // stampa prodotto
         public void stampaProdotto()
         {
             Console.WriteLine("il nome è: " + this.GetNome());
             Console.WriteLine("La descrizione è: " + this.Descrizione);
-            Console.WriteLine("il prezzo è: " + this.prezzo);
+            Console.WriteLine("il prezzo base è: " + this.prezzo);
+            Console.WriteLine("il prezzo con l'iva è: " + this.GetIvaPrice());
             Console.WriteLine("il codice è: " + this.Codice);
 
         }
-
-
 
     }
 }
