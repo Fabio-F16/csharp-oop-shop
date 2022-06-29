@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Prodotto felpa = new Prodotto("Nike", "felpone felpato", 29.99);
+            felpa.stampaProdotto();
+          
         }
     }
 }
