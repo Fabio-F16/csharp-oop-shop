@@ -25,8 +25,8 @@ namespace csharp_oop_shop
         public double GetIvaPrice()
         {
 
-            this.iva = 0.21;
-            double fullPrice = this.prezzo + this.iva;
+            this.iva = 21.00;
+            double fullPrice = this.prezzo + (this.prezzo * iva) / 100;
             return fullPrice;
         }
 
@@ -41,7 +41,8 @@ namespace csharp_oop_shop
         // nome + codice
         public string GetNome()
         {
-            return $"{Codice} - {Nome}";
+            string codiceConNumero = this.Codice.ToString();
+            return codiceConNumero + "-" + this.Nome;
         }
 
 
